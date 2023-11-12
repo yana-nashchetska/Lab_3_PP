@@ -6,16 +6,20 @@ public class FileService implements FileServiceAction{
 
     BufferedReader read;
 
-    {
-        try {
-            read = new BufferedReader(new FileReader("warehouse.txt"));
-        } catch (IOException e) {
-            e.getMessage();
-        }
-    }
-
     @Override
     public void receiveOrder() {
+        {
+            try {
+                read = new BufferedReader(new FileReader("warehouse.txt"));
+
+
+
+
+                read.close();
+            } catch (IOException e) {
+                e.getMessage();
+            }
+        }
 
     }
 
