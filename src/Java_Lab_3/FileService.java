@@ -1,31 +1,12 @@
 package Java_Lab_3;
-import java.io.*;
 
+public interface FileService {
+    void receiveAllProducts();
+    void orderProducts(Order... args); // буде збільшувати кількість продуктів на складі, на ту кількість, якої нам не вистачило.  Тобто перезаписуватиме
+    // кількість продуктів у файлі складу.
 
-public class FileService implements FileServiceAction{
+    void receiveProducts(Order... args); // отримуємо певні продукти зі складу, тобто викликаємо метод, що буде поновлювати кількість продуктів в магазині
+// склад буде окремо від магазину.
 
-    BufferedReader read;
-
-    @Override
-    public void receiveOrder() {
-        {
-            try {
-                read = new BufferedReader(new FileReader("warehouse.txt"));
-
-
-
-
-                read.close();
-            } catch (IOException e) {
-                e.getMessage();
-            }
-        }
-
-    }
-
-    @Override
-    public void createOder() {
-
-    }
+    void sortByPrice(); // сортуємо продукти по ціні
 }
-

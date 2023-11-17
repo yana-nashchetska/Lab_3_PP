@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23781fdb-c228-4d6d-a6f5-303ad79a1746" name="Changes" comment="Comments added. General logic created. TODO: add rest of the logic, rebuild old one. ADD CUSTOMER">
+    <list default="true" id="23781fdb-c228-4d6d-a6f5-303ad79a1746" name="Changes" comment="added the rest of the logic, added customer but only in blueprint.">
+      <change afterPath="$PROJECT_DIR$/src/Java_Lab_3/Check.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Java_Lab_3/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Java_Lab_3/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Java_Lab_3/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/FileServiceAction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Storehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Storehouse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="package.json" />
         <option value="Class" />
       </list>
     </option>
@@ -24,11 +34,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;yana-nashchetska&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="7fe44b56-acc7-4912-82fe-0a18699d4516" />
+        <option name="url" value="https://github.com/yana-nashchetska/Lab_3_PP.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Java_Lab_3/Main.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
+  &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2XtHlZVZMVsp0yI7s8Sby8xaKUC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -49,6 +76,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -58,7 +86,7 @@
       <module name="Java_Lab_3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Java_Lab_3.*" />
+          <option name="PATTERN" value="Java_Lab_3.Store.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -85,7 +113,18 @@
       <workItem from="1699736666459" duration="167000" />
       <workItem from="1699737383029" duration="1457000" />
       <workItem from="1699784426880" duration="11521000" />
-      <workItem from="1699826179631" duration="3829000" />
+      <workItem from="1699826179631" duration="4011000" />
+      <workItem from="1699877569854" duration="5398000" />
+      <workItem from="1699897343630" duration="731000" />
+      <workItem from="1699988959313" duration="25000" />
+      <workItem from="1699997009613" duration="4253000" />
+      <workItem from="1700004305114" duration="2424000" />
+      <workItem from="1700033675429" duration="12197000" />
+      <workItem from="1700061021883" duration="2397000" />
+      <workItem from="1700072692366" duration="11563000" />
+      <workItem from="1700095258924" duration="631000" />
+      <workItem from="1700167931872" duration="1882000" />
+      <workItem from="1700238617795" duration="3646000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -103,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699813970565</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added the rest of the logic, added customer but only in blueprint.">
+      <option name="closed" value="true" />
+      <created>1699834566309</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699834566309</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +159,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Comments added. General logic created. TODO: add rest of the logic, rebuild old one. ADD CUSTOMER" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comments added. General logic created. TODO: add rest of the logic, rebuild old one. ADD CUSTOMER" />
+    <MESSAGE value="added the rest of the logic, added customer but only in blueprint." />
+    <option name="LAST_COMMIT_MESSAGE" value="added the rest of the logic, added customer but only in blueprint." />
   </component>
 </project>
