@@ -1,10 +1,6 @@
 package Java_Lab_3;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Stream;
+import java.util.*;
 
 public class Storehouse {
     private final String name = " StoreHOUSE ";
@@ -14,18 +10,37 @@ public class Storehouse {
     private final String[] vegetables = {"Potato", "Tomato", "Cucumber", "Carrot", "Onion"};
     private final String[] fruits = {"Apple", "Banana", "Orange", "Lemon", "Pineapple"};
 
-    private HashMap<Product, Integer> allProducts = new HashMap<>(); // містить всі продукти, які є в магазині
-    private ArrayList<Customer> customers = new ArrayList<>();
+    private ArrayList<ProductInfo> allProducts = new ArrayList<>(); // містить всі продукти, які є в магазині
+
+    private ArrayList<Customer> allCustomers = new ArrayList<>();
+
+    public Storehouse(ArrayList<ProductInfo> allProducts, ArrayList<Customer> allCustomers) {
+        this.allProducts = allProducts;
+        this.allCustomers = allCustomers;
+    }
+
+    public ArrayList<Customer> getAllCustomers() {
+        return allCustomers;
+    }
+
+    public void setAllCustomers(ArrayList<Customer> allCustomers) {
+        this.allCustomers = allCustomers;
+    }
+
+    public void setAllProducts(ArrayList<ProductInfo> allProducts) {
+        this.allProducts = allProducts;
+    }
 
     public Storehouse() {
     }
 
-    public HashMap<Product, Integer> getAllProducts() {
+    public ArrayList<ProductInfo> getAllProducts() {
         return allProducts;
     }
 
-    public void setAllProducts(HashMap<Product, Integer> allProducts) {
-        this.allProducts = allProducts;
+    public void setAllProducts(String name, double price, int quantity)
+    {
+            this.allProducts.add(new ProductInfo(new Product(name, price), quantity));
     }
 
     public String[] getFish() {
@@ -44,16 +59,16 @@ public class Storehouse {
         return fruits;
     }
 
-    /*@Override
-    public void sellProducts(String name, String surname, Product... products) {
-*/
-
-    /*}*/
 
     @Override
     public String toString() {
         return "Storehouse" + this.name +
                 "\nall products: " + allProducts;
+    }
+
+
+    public String getName() {
+        return this.name;
     }
 }
 

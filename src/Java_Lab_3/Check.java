@@ -1,33 +1,70 @@
 package Java_Lab_3;
 
+import java.beans.Customizer;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 
 public class Check {
-    private LocalDateTime dateOfPurchase;
+    private LocalDateTime date;
 
-    private ArrayList<Order> orders;
+    private String storageName;
+    private ArrayList<ProductInfo> boughtProducts;
+    private String customerName;
+    private String customerSurname;
     private double totalSum;
 
-    public Check(LocalDateTime dateOfPurchase, Customer customer, ArrayList<Order> orders) {
-        this.dateOfPurchase = dateOfPurchase;
-        this.orders = orders;
+
+    public Check(LocalDateTime date,
+                 String storageName,
+                 String customerName,
+                 String customerSurname,
+                 ProductInfo... args) {
+        this.date = date;
+        this.storageName = storageName;
+        this.customerName = customerName;
+        this.customerSurname = customerSurname;
+        this.boughtProducts = new ArrayList<>(Arrays.asList(args));
     }
 
-    public void setOrders(ArrayList<Order> orders) {
-        this.orders = orders;
+    public LocalDateTime getDate() {
+        return date;
     }
 
-    public ArrayList<Order> getOrders() {
-        return orders;
-    }
-    public LocalDateTime getDateOfPurchase() {
-        return dateOfPurchase;
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 
-    public void setDateOfPurchase(LocalDateTime dateOfPurchase) {
-        this.dateOfPurchase = dateOfPurchase;
+    public String getStorageName() {
+        return storageName;
+    }
+
+    public void setStorageName(String storageName) {
+        this.storageName = storageName;
+    }
+
+    public ArrayList<ProductInfo> getBoughtProducts() {
+        return boughtProducts;
+    }
+
+    public void setBoughtProducts(ArrayList<ProductInfo> boughtProducts) {
+        this.boughtProducts = boughtProducts;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getCustomerSurname() {
+        return customerSurname;
+    }
+
+    public void setCustomerSurname(String customerSurname) {
+        this.customerSurname = customerSurname;
     }
 
     public double getTotalSum() {
@@ -40,11 +77,14 @@ public class Check {
 
     @Override
     public String toString() {
-        return "===================== \n" +
-                "date: " + dateOfPurchase +
-                "\n orders: \n" + orders +
-                "=====================" +
-                "\n TOTAL SUM = " + totalSum +
-                "=====================";
+        return "   -----  THIS IS CHECK:  -----  \n" +
+                "=============================" +
+                "date: " + date +
+                "\n You," + customerName + customerSurname + "\t\n" +
+                "bought products in " + storageName + "\t\n" +
+                "Products: \n" + boughtProducts + "\t\n" +
+                "=============================" +
+                "TOTAL SUM: " + totalSum +
+                "=============================";
     }
 }

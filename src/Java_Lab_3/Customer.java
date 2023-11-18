@@ -1,33 +1,53 @@
 package Java_Lab_3;
 
+import java.util.ArrayList;
+
 public class Customer {
-    private String name;
+    private String firstName;
+    private String lastName;
+    private ArrayList<Check> myChecks = new ArrayList<>();
 
-    private String surname;
-
-    public Customer(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+    public Customer(String firstName, String lastName, ArrayList<Check> myChecks) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.myChecks = myChecks;
     }
 
-    public String getName() {
-        return name;
+    public Customer(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public ArrayList<Check> getMyChecks() {
+        return myChecks;
+    }
+
+    public void setMyChecks(ArrayList<Check> myChecks) {
+        this.myChecks = myChecks;
     }
 
     @Override
     public String toString() {
-        return name + " " + surname;
+        return "Customer{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", myChecks=" + myChecks +
+                '}';
     }
 }

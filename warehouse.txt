@@ -1,18 +1,17 @@
-potato, 10, 1000
-tomato, 15, 500
-avocado, 79.99, 100
-spaghetti, 54.50, 230
-cucumber, 8, 300
-apple, 2.5, 400
-carrot, 4, 250
-beef, 12, 100
-egg, 2.5, 120
-bread, 3, 200
-milk, 2.2, 300
-orange, 1.5, 180
-pineapple, 3.99, 50
-spinach, 2.75, 75
-salami, 18.50, 120
-yogurt, 1.80, 200
-blueberries, 5.50, 100
-
+potato,10.00,1000
+tomato,15.00,500
+avocado,79.99,100
+spaghetti,54.50,230
+cucumber,8.00,300
+apple,2.50,400
+carrot,4.00,250
+beef,12.00,100
+egg,2.50,120
+bread,3.00,200
+milk,2.20,300
+orange,1.50,180
+pineapple,3.99,50
+spinach,2.75,75
+salami,18.50,120
+yogurt,1.80,200
+blueberries,5.50,100

@@ -1,13 +1,11 @@
 package Java_Lab_3;
 
-import java.util.HashMap;
-
-public class Order {
+public class ProductInfo {
     private Product product;
 
     private int quantity;
 
-    public Order(Product product, int quantity) {
+    public ProductInfo(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;
     }
@@ -32,6 +30,6 @@ public class Order {
 
     @Override
     public String toString() {
-        return product + " - " + quantity + " pcs";
+        return product + " " + quantity + " pcs";
     }
 }
