@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23781fdb-c228-4d6d-a6f5-303ad79a1746" name="Changes" comment="rewrote the logic.">
-      <change afterPath="$PROJECT_DIR$/src/Java_Lab_3/FileServiceImpl.java" afterDir="false" />
+    <list default="true" id="23781fdb-c228-4d6d-a6f5-303ad79a1746" name="Changes" comment="we can buy products, the quantity will change in the store, but no check generation(">
+      <change afterPath="$PROJECT_DIR$/src/Java_Lab_3/CustomException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Check.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/FileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/ProductInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Storehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Storehouse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseService.java" afterDir="false" />
@@ -141,7 +138,10 @@
       <workItem from="1700167931872" duration="1882000" />
       <workItem from="1700238617795" duration="26235000" />
       <workItem from="1700290014259" duration="10465000" />
-      <workItem from="1700302959575" duration="7332000" />
+      <workItem from="1700302959575" duration="7576000" />
+      <workItem from="1700314001567" duration="7756000" />
+      <workItem from="1700332504274" duration="9767000" />
+      <workItem from="1700386339011" duration="7952000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -175,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700243543402</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="we can buy products, the quantity will change in the store, but no check generation(">
+      <option name="closed" value="true" />
+      <created>1700311714718</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700311714718</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +194,28 @@
     <MESSAGE value="Comments added. General logic created. TODO: add rest of the logic, rebuild old one. ADD CUSTOMER" />
     <MESSAGE value="added the rest of the logic, added customer but only in blueprint." />
     <MESSAGE value="rewrote the logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="rewrote the logic." />
+    <MESSAGE value="we can buy products, the quantity will change in the store, but no check generation(" />
+    <option name="LAST_COMMIT_MESSAGE" value="we can buy products, the quantity will change in the store, but no check generation(" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Java_Lab_3/Main.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Java_Lab_3.Customer" memberName="myChecks" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/Java_Lab_3/Check.java" line="30">
+        <watch expression="((Check)this).boughtProducts" language="JAVA" custom="Java_Lab_3.Check" />
+      </inline-watch>
+    </watches-manager>
   </component>
 </project>

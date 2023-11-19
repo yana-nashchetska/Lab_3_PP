@@ -1,5 +1,6 @@
 package Java_Lab_3;
 
+import javax.print.attribute.standard.DocumentName;
 import java.beans.Customizer;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -12,7 +13,10 @@ public class Check {
     private ArrayList<ProductInfo> boughtProducts;
     private String customerName;
     private String customerSurname;
+    private ArrayList<String> comments;
+    private ArrayList<String> bags = new ArrayList<>();
     private double totalSum;
+    //private boolean isEditable = false;
 
 
     public Check(LocalDateTime date,
@@ -25,6 +29,8 @@ public class Check {
         this.customerName = customerName;
         this.customerSurname = customerSurname;
         this.boughtProducts = new ArrayList<>(Arrays.asList(args));
+        this.comments = new ArrayList<>();
+        this.bags = new ArrayList<>();
     }
 
     public LocalDateTime getDate() {
@@ -51,40 +57,47 @@ public class Check {
         this.boughtProducts = boughtProducts;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public String getCustomerSurname() {
-        return customerSurname;
-    }
-
-    public void setCustomerSurname(String customerSurname) {
-        this.customerSurname = customerSurname;
-    }
-
-    public double getTotalSum() {
-        return totalSum;
-    }
-
     public void setTotalSum(double totalSum) {
         this.totalSum = totalSum;
     }
 
+
     @Override
     public String toString() {
-        return "   -----  THIS IS CHECK:  -----  \n" +
-                "=============================" +
-                "date: " + date +
-                "\n You," + customerName + customerSurname + "\t\n" +
-                "bought products in " + storageName + "\t\n" +
-                "Products: \n" + boughtProducts + "\t\n" +
-                "=============================" +
-                "TOTAL SUM: " + totalSum +
-                "=============================";
+        StringBuilder result = new StringBuilder("   -----  THIS IS CHECK:  -----  \n");
+        result.append("=============================\n");
+        result.append("date: ").append(date).append("\n");
+        result.append(" You,").append(customerName).append(" ").append(customerSurname).append("\t\n");
+        result.append("bought products in ").append(storageName).append("\t\n");
+        result.append("Products: \n").append(boughtProducts).append("\t\n");
+
+        // Додайте коментарі та сумки до результату
+        for (ProductInfo productInfo : boughtProducts) {
+            String productName = productInfo.getProduct().getName();
+            if (isVegetableOrFruit(productName)) {
+                result.append("Bag: ").append(productName).append("\n");
+            } else if (isMeatOrFish(productName)) {
+                result.append("Comment: Don't forget to store ").append(productName).append(" in the fridge.\n");
+            }
+        }
+
+        result.append("=============================");
+        result.append("TOTAL SUM: ").append(totalSum);
+        result.append("=============================");
+
+        return result.toString();
     }
+
+    // Додайте допоміжні методи для перевірки категорії товару
+    private boolean isVegetableOrFruit(String productName) {
+        return Arrays.asList("apple", "banana", "orange", "lemon", "blueberry", "pear").contains(productName);
+    }
+
+    private boolean isMeatOrFish(String productName) {
+        return Arrays.asList("fish", "meat").contains(productName);
+    }
+
+
+
+
 }

@@ -1,79 +1,97 @@
 package Java_Lab_3;
 
+import java.io.IOException;
+import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
 
-public class StorehouseImpl  implements StorehouseService {
-
-        /* storehouse.getCustomers().stream()
-                .filter(c -> c.getName().equals(customer.getName())
-                        && c.getSurname().equals(customer.getSurname()))
-                .findFirst()
-                .ifPresentOrElse(
-                        c -> {
-                            c.getChecks().add(new Check(LocalDateTime.now(), new ArrayList<>(Arrays.asList(order))));
-                        },
-                        () -> {
-                            customer.getChecks().add(new Check(LocalDateTime.now(), new ArrayList<>(Arrays.asList(order))));
-                            storehouse.getCustomers().add(customer);
-                        }
-                );
-        storehouse.getCustomers().stream()
-                .filter(c -> c.getName().equals(customer.getName())
-                        && c.getSurname().equals(customer.getSurname()))
-                .findFirst()
-                .ifPresentOrElse(
-                        c -> {
-                            c.getChecks().stream()
-                                    .filter(ch -> ch.getDateOfPurchase().equals(date))
-                                    .findFirst()
-                                    .ifPresentOrElse(
-                                            ch -> {
-                                                ch.getOrders().add(order);
-                                            },
-                                            () -> {
-                                                c.getChecks().add(new Check(date, new ArrayList<>(Arrays.asList(order))));
-                                            }
-                                    );
-                        },
-                        () -> {
-                            customer.getChecks().add(new Check(date, new ArrayList<>(Arrays.asList(order))));
-                            storehouse.getCustomers().add(customer);
-                        }
-                );
-        storehouse.getAllProducts().stream()
-                .filter(p -> p.getProduct().getName().equals(order.getProduct().getName()))
-                .findFirst()
-                .ifPresentOrElse(
-                        p -> {
-                            p.setQuantity(p.getQuantity() - order.getQuantity());
-                        },
-                        () -> {
-                            System.out.println("There is no such product in the storehouse");
-                        });*/
-
-    @Override
-    public void printCheck() {
-
+public class StorehouseImpl implements StorehouseService {
+    public Check getLastCheck(Customer customer) {
+        return customer.getMyChecks().isEmpty() ? null : customer.getMyChecks().get(customer.getMyChecks().size() - 1);
     }
 
     public void buy(Storehouse storehouse, Customer customer, LocalDateTime date, ProductInfo... args) {
-        customer.getMyChecks().add(new Check(date,
+        customer.addCheck(new Check(date,
                 storehouse.getName(),
                 customer.getFirstName(), customer.getLastName(),
                 args));
 
+        calcTotalSum(customer);
         recalculateQuantity(storehouse, customer, args);
+        printCheck(customer);
     }
+
+    @Override
+    public void calcTotalSum(Customer customer) {
+        // Отримати останній чек
+        Check lastCheck = getLastCheck(customer);
+
+        if (lastCheck != null) {
+            // Отримати список продуктів з останнього чеку
+            ArrayList<ProductInfo> products = lastCheck.getBoughtProducts();
+
+            // Порахувати загальну суму
+            double totalSum = products.stream()
+                    .mapToDouble(productInfo -> productInfo.getProduct().getPrice() * productInfo.getQuantity())
+                    .sum();
+
+            // Встановити загальну суму
+            lastCheck.setTotalSum(totalSum);
+        } else {
+            System.out.println("No checks to calculate total sum.");
+        }
+
+    }
+
+    public void printCheck(Customer customer) {
+        // Отримати останній чек
+        Check lastCheck = getLastCheck(customer);
+
+        if (lastCheck != null) {
+            // Створити унікальне ім'я файлу для чеку
+            String fileName = "check_" + customer.getFirstName() + "_" + customer.getLastName() + "_" + System.currentTimeMillis() + ".txt";
+            Path checkPath = Paths.get("D:\\PP\\Labs\\Java_Lab_3\\Checks_java_3", fileName);
+            this.addComment();
+            this.addBag();
+
+            try {
+                // Записати чек у файл
+                Files.write(checkPath, lastCheck.toString().getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+                System.out.println("Check printed successfully!");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("No checks to print.");
+        }
+    }
+
+    @Override
+    public void printAllChecks(Storehouse storehouse) throws CustomException{
+        if (storehouse.getAllCustomers().isEmpty()) {
+            throw new CustomException("No customers to print checks.");
+        }
+
+        storehouse.getAllCustomers().forEach(customer -> {
+            System.out.println(customer);  // Виводимо інформацію про покупця
+
+            if (customer.getMyChecks().isEmpty()) {
+                System.out.println("No checks to print for this customer.");
+            } else {
+                customer.getMyChecks().forEach(check -> {
+                    System.out.println("Check: " + check);
+                });
+            }
+        });
+    }
+
+
 
     @Override
     public void recalculateQuantity(Storehouse storehouse, Customer customer, ProductInfo... args) {
         ArrayList<ProductInfo> temporary = new ArrayList<>(Arrays.asList(args));
-
-        System.out.println("Temporary purchase: " + temporary);
-
         storehouse.getAllProducts().forEach(productInfoInStorehouse -> {
             // Перевіряємо, чи продукт знаходиться в temporary за іменем
             Optional<ProductInfo> matchingProductInfo = temporary.stream()
@@ -88,13 +106,13 @@ public class StorehouseImpl  implements StorehouseService {
             });
         });
 
-        System.out.println("Updated storehouse: " + storehouse.getAllProducts());
+       // System.out.println("Updated storehouse: " + storehouse.getAllProducts());
     }
 
 
     @Override
     public void addCustomer(Storehouse storehouse, Customer customer) {
-
+        storehouse.getAllCustomers().add(customer);
     }
 
     @Override
@@ -102,16 +120,9 @@ public class StorehouseImpl  implements StorehouseService {
 
     }
 
-
-  /*  @Override
-    public void recalculateQuantity(Storehouse storehouse, void printCheck) {
-
-    }*/
-
-
-
     @Override
     public void addBag() {
+
 
     }
 

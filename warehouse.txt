@@ -5,13 +5,12 @@ spaghetti,54.50,230
 cucumber,8.00,300
 apple,2.50,400
 carrot,4.00,250
-beef,12.00,100
+meat,100.00,1000
 egg,2.50,120
 bread,3.00,200
 milk,2.20,300
 orange,1.50,180
 pineapple,3.99,50
-spinach,2.75,75
-salami,18.50,120
+fish,97.75,7500
 yogurt,1.80,200
 blueberries,5.50,100

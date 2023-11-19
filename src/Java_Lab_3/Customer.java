@@ -7,47 +7,35 @@ public class Customer {
     private String lastName;
     private ArrayList<Check> myChecks = new ArrayList<>();
 
-    public Customer(String firstName, String lastName, ArrayList<Check> myChecks) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.myChecks = myChecks;
-    }
-
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public void addCheck(Check check) {
+        myChecks.add(check);
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public ArrayList<Check> getMyChecks() {
         return myChecks;
     }
 
-    public void setMyChecks(ArrayList<Check> myChecks) {
-        this.myChecks = myChecks;
-    }
-
     @Override
     public String toString() {
-        return "Customer{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", myChecks=" + myChecks +
-                '}';
+        StringBuilder checksString = new StringBuilder();
+        for (Check check : myChecks) {
+            checksString.append("\n").append(check);
+        }
+
+        return "Customer: " + firstName + " " + lastName +
+                "\nMy checks:" + checksString;
     }
 }

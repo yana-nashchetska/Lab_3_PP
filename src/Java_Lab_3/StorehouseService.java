@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 public interface StorehouseService {
 
+    void calcTotalSum(Customer customer); // рахуємо загальну суму чеку
     void editStorehouse(Storehouse storehouse, ProductInfo productInfo, int productPrice); // в магазині будемо редагувати ціну
     // продукту. Не редагуємо на складі, бо магазин може виставляти свою ціну окремо від складу, та робити націнку.
 
@@ -12,8 +13,9 @@ public interface StorehouseService {
 
     void recalculateQuantity(Storehouse storehouse, Customer customer,ProductInfo... args);
 
-    void printCheck(); // прінтимо певний чек у txt форматі.
+    void printCheck(Customer customer); // прінтимо певний чек у txt форматі.
 
+    void printAllChecks(Storehouse storehouse) throws Exception; // прінтимо всі чеки в консоль
     void addBag(); // дозапише до чеку пакет та його ціну.
     void addComment(); // для додавання коментаря до чеку
 
