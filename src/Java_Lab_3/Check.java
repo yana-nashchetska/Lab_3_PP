@@ -2,12 +2,13 @@ package Java_Lab_3;
 
 import javax.print.attribute.standard.DocumentName;
 import java.beans.Customizer;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Check {
-    private LocalDateTime date;
+    private LocalDate date;
 
     private String storageName;
     private ArrayList<ProductInfo> boughtProducts;
@@ -16,10 +17,8 @@ public class Check {
     private ArrayList<String> comments;
     private ArrayList<String> bags = new ArrayList<>();
     private double totalSum;
-    //private boolean isEditable = false;
 
-
-    public Check(LocalDateTime date,
+    public Check(LocalDate date,
                  String storageName,
                  String customerName,
                  String customerSurname,
@@ -33,11 +32,11 @@ public class Check {
         this.bags = new ArrayList<>();
     }
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -71,7 +70,6 @@ public class Check {
         result.append("bought products in ").append(storageName).append("\t\n");
         result.append("Products: \n").append(boughtProducts).append("\t\n");
 
-        // Додайте коментарі та сумки до результату
         for (ProductInfo productInfo : boughtProducts) {
             String productName = productInfo.getProduct().getName();
             if (isVegetableOrFruit(productName)) {
@@ -88,7 +86,6 @@ public class Check {
         return result.toString();
     }
 
-    // Додайте допоміжні методи для перевірки категорії товару
     private boolean isVegetableOrFruit(String productName) {
         return Arrays.asList("apple", "banana", "orange", "lemon", "blueberry", "pear").contains(productName);
     }
@@ -97,7 +94,7 @@ public class Check {
         return Arrays.asList("fish", "meat").contains(productName);
     }
 
-
-
-
+    public double getTotalSum() {
+        return totalSum;
+    }
 }

@@ -87,7 +87,32 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
-    public void sortByPrice() {
+    public void sortByPrice(String path) {
+        try {
+            ArrayList<ProductInfo> allProducts = Files.lines(Paths.get(path), StandardCharsets.UTF_8)
+                    .map(line -> {
+                        String[] product =  line.split(",");
+                        String productName = product[0].trim();
+                        String productPrice = product[1].trim();
+                        String productQuantity = product[2].trim();
+                        return new ProductInfo(new Product(productName, Double.parseDouble(productPrice)), Integer.parseInt(productQuantity));
+                    })
+                    .collect(Collectors.toCollection(ArrayList::new));
+            allProducts.sort((productInfo1, productInfo2) -> {
+                if (productInfo1.getProduct().getPrice() > productInfo2.getProduct().getPrice()) {
+                    return 1;
+                } else if (productInfo1.getProduct().getPrice() < productInfo2.getProduct().getPrice()) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+            Files.write(Paths.get(path), allProducts.stream()
+                    .map(productInfo -> productInfo.getProduct().getName() + ", " + productInfo.getProduct().getPrice() + ", " + productInfo.getQuantity())
+                    .collect(Collectors.toList()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -97,5 +122,7 @@ public class FileServiceImpl implements FileService {
                 " " + p.getProduct().getPrice()
                 + " \t quantity: " + "\t" + p.getQuantity()));
     }
+
+
 }
 
