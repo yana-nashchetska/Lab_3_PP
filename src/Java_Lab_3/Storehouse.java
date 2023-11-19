@@ -72,5 +72,12 @@ public class Storehouse {
     public String getName() {
         return this.name;
     }
+
+    public ProductInfo getProductInfo(String name) {
+        return this.allProducts.stream()
+                .filter(productInfo -> productInfo.getProduct().getName().equals(name))
+                .findFirst()
+                .orElse(null);
+    }
 }
 

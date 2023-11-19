@@ -57,6 +57,22 @@ public class Main {
                 new ProductInfo(new Product("bread", storehouse), 10),
                 new ProductInfo(new Product("fish", storehouse), 100),
                 new ProductInfo(new Product("milk", storehouse), 50));
+
+
+        fileServiceImpl.orderProducts(storehouse, warehousePath,
+                new ProductInfo(new Product("bread", storehouse), 1000),
+                new ProductInfo(new Product("fish", storehouse), 1000),
+                new ProductInfo(new Product("milk", storehouse), 5000)); // ми замовили 1000 хліба, 1000 риби та 5000 молока
+        // і відразу ж отримали їх у магазин
+
+        fileServiceImpl.printAllProducts(storehouse);// для перевірки
+
+        storehouseService.buy(storehouse, ivanPetrenko, LocalDateTime.of(2023,11,20,14,36),
+                new ProductInfo(new Product("bread", storehouse), 1));
+        fileServiceImpl.orderProducts(storehouse, warehousePath,
+                new ProductInfo(new Product("bread", storehouse), 90_000));
+
+        fileServiceImpl.printAllProducts(storehouse);// для перевірки
     }
 }
 

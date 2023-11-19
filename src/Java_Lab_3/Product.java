@@ -46,7 +46,7 @@ public class Product
 
     @Override
     public String toString() {
-        return name + "---- " + price + " UAH";
+        return name + "\t---- " + price + "\t UAH";
     }
 
 }

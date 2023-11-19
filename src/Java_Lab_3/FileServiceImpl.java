@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -33,13 +34,56 @@ public class FileServiceImpl implements FileService {
 
 
     @Override
-    public void orderProducts(ProductInfo... args) {
-
+    public void orderProducts(Storehouse storehouse, String path, ProductInfo... args) {
+        try {
+            ArrayList<ProductInfo> allProducts = Files.lines(Paths.get(path), StandardCharsets.UTF_8)
+                    .map(line -> {
+                        String[] product =  line.split(",");
+                        String productName = product[0].trim();
+                        String productPrice = product[1].trim();
+                        String productQuantity = product[2].trim();
+                        return new ProductInfo(new Product(productName, Double.parseDouble(productPrice)), Integer.parseInt(productQuantity));
+                    })
+                    .collect(Collectors.toCollection(ArrayList::new));
+            for (ProductInfo arg : args) {
+                allProducts.stream()
+                        .filter(productInfo -> productInfo.getProduct().getName().equals(arg.getProduct().getName()))
+                        .forEach(productInfo -> {
+                            productInfo.setQuantity(arg.getQuantity()); // Встановлюємо нову кількість продукту
+                        });
+            }
+            Files.write(Paths.get(path), allProducts.stream()
+                    .map(productInfo -> productInfo.getProduct().getName() + ", " + productInfo.getProduct().getPrice() + ", " + productInfo.getQuantity()) // Записуємо стару ціну продукту та нову кількість
+                    .collect(Collectors.toList()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    @Override
-    public void receiveProducts(Storehouse storehouse, ProductInfo... args) {
 
+
+    public void receiveProducts(Storehouse storehouse, String path, ProductInfo... args) {
+        try {
+            ArrayList<ProductInfo> allProducts = Files.lines(Paths.get(path), StandardCharsets.UTF_8)
+                    .map(line -> {
+                        String[] product =  line.split(",");
+                        String productName = product[0].trim();
+                        String productPrice = product[1].trim();
+                        String productQuantity = product[2].trim();
+                        return new ProductInfo(new Product(productName, Double.parseDouble(productPrice)), Integer.parseInt(productQuantity));
+                    })
+                    .collect(Collectors.toCollection(ArrayList::new));
+            for (ProductInfo arg : args) {
+                allProducts.stream()
+                        .filter(productInfo -> productInfo.getProduct().getName().equals(arg.getProduct().getName()))
+                        .forEach(productInfo -> {
+                            ProductInfo storeProductInfo = storehouse.getProductInfo(productInfo.getProduct().getName()); // Отримуємо ProductInfo з магазину
+                            storeProductInfo.setQuantity(storeProductInfo.getQuantity() + arg.getQuantity()); // Додаємо нову кількість продукту до існуючої кількості
+                        });
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

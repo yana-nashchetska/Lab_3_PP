@@ -1,5 +1,6 @@
 package Java_Lab_3;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.time.LocalDateTime;
@@ -59,7 +60,15 @@ public class StorehouseImpl implements StorehouseService {
             try {
                 // Записати чек у файл
                 Files.write(checkPath, lastCheck.toString().getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE);
-                System.out.println("Check printed successfully!");
+
+                // Зробити файл тільки для читання
+                File file = checkPath.toFile();
+                boolean isReadOnly = file.setReadOnly();
+                if (isReadOnly) {
+                    System.out.println("Check printed successfully and is now read-only!");
+                } else {
+                    System.out.println("Check printed successfully, but failed to make the file read-only.");
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -67,6 +76,7 @@ public class StorehouseImpl implements StorehouseService {
             System.out.println("No checks to print.");
         }
     }
+
 
     @Override
     public void printAllChecks(Storehouse storehouse) throws CustomException{
@@ -140,6 +150,7 @@ public class StorehouseImpl implements StorehouseService {
     public void averagePrice() {
 
     }
+
 
     @Override
     public void spentMoney(LocalDateTime from, LocalDateTime to, String name, String surname) {
