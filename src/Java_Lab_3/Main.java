@@ -19,7 +19,7 @@ public class Main {
         FileServiceImpl fileServiceImpl = new FileServiceImpl();
 
         fileServiceImpl.receiveAllProducts(storehouse, warehousePath);
-        fileServiceImpl.printAllProducts(storehouse);// для перевірки
+        fileServiceImpl.printAllProducts(storehouse);
 
         Customer ivanPetrenko = new Customer("Ivan", "Petrenko");
         Customer petroIvanenko = new Customer("Petro", "Ivanenko");
@@ -37,17 +37,16 @@ public class Main {
 
 
         System.out.println("=========================");
-        fileServiceImpl.printAllProducts(storehouse);// для перевірки
+        fileServiceImpl.printAllProducts(storehouse);
 
         System.out.println("=========================");
 
-        storehouseService.editStorehouse(storehouse, new Product("bread", storehouse), 15); // новий прайс бреда
+        storehouseService.editStorehouse(storehouse, new Product("bread", storehouse), 15);
 
 
         storehouseService.buy(storehouse, petroIvanenko, LocalDate.of(2023, 11, 19), new ProductInfo(new Product("bread", storehouse), 10), new ProductInfo(new Product("fish", storehouse), 100), new ProductInfo(new Product("milk", storehouse), 50));
 
         fileServiceImpl.orderProducts(storehouse, warehousePath, new ProductInfo(new Product("bread", storehouse), 1000), new ProductInfo(new Product("fish", storehouse), 1000), new ProductInfo(new Product("milk", storehouse), 5000)); // ми замовили 1000 хліба, 1000 риби та 5000 молока
-        // і відразу ж отримали їх у магазин
 
         fileServiceImpl.printAllProducts(storehouse);// для перевірки
 
@@ -63,7 +62,7 @@ public class Main {
         System.out.println(storehouseService.calcSpentMoney(LocalDate.of(2023, 11, 10), LocalDate.of(2023, 11, 20), ivanPetrenko));
 
         System.out.println("=========================");
-        storehouse.getAllCustomers().forEach(System.out::println);  // для перевірки- ЗБЕРЕЖЕННЯ ІСТОРІЇ ПОКУПОК НАЧЕ
+        storehouse.getAllCustomers().forEach(System.out::println);  // для перевірки- ЗБЕРЕЖЕННЯ ІСТОРІЇ ПОКУПОК
         System.out.println("=========================");
         System.out.println("The largest income of the day: 18/11/2023");
 
@@ -86,11 +85,11 @@ public class Main {
             storehouseService.printAllChecks(storehouse);
         } catch (CustomException e) {
             System.err.println("CustomException caught: " + e.getMessage());
-            e.printStackTrace(); // друкуємо стек викликів, це допоможе нам знайти помилку
+            e.printStackTrace();
         }
 
         System.out.println("=========================");
-        fileServiceImpl.sortByPrice(warehousePath); // сортуємо продукти по ціні
+        fileServiceImpl.sortByPrice(warehousePath);
         System.out.println("products in warehouse were sorted!");
 
         System.out.println("=========================");

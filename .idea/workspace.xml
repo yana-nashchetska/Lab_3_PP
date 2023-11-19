@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23781fdb-c228-4d6d-a6f5-303ad79a1746" name="Changes" comment="almost done. payed check can be edited">
-      <change afterPath="$PROJECT_DIR$/src/Java_Lab_3/CheckPaidException.java" afterDir="false" />
+    <list default="true" id="23781fdb-c228-4d6d-a6f5-303ad79a1746" name="Changes" comment="finished.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/CheckPaidException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/FileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/ProductInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Storehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Storehouse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseService.java" afterDir="false" />
     </list>
@@ -143,7 +144,7 @@
       <workItem from="1700332504274" duration="9767000" />
       <workItem from="1700386339011" duration="15087000" />
       <workItem from="1700404210078" duration="10752000" />
-      <workItem from="1700422874316" duration="8086000" />
+      <workItem from="1700422874316" duration="8710000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -217,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700425965477</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finished.">
+      <option name="closed" value="true" />
+      <created>1700431395794</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700431395794</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +242,8 @@
     <MESSAGE value="added product edition" />
     <MESSAGE value="added product order, receivment and maybe lock" />
     <MESSAGE value="almost done. payed check can be edited" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost done. payed check can be edited" />
+    <MESSAGE value="finished." />
+    <option name="LAST_COMMIT_MESSAGE" value="finished." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

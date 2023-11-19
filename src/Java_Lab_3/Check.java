@@ -34,32 +34,12 @@ public class Check {
         this.bags = new ArrayList<>();
     }
 
-    public Check() {
-
-    }
-
     public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getStorageName() {
-        return storageName;
-    }
-
-    public void setStorageName(String storageName) {
-        this.storageName = storageName;
-    }
-
     public ArrayList<ProductInfo> getBoughtProducts() {
         return boughtProducts;
-    }
-
-    public void setBoughtProducts(ArrayList<ProductInfo> boughtProducts) {
-        this.boughtProducts = boughtProducts;
     }
 
     public void setTotalSum(double totalSum) {

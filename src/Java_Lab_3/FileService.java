@@ -9,8 +9,6 @@ public interface FileService {
 
     void receiveProducts(Storehouse storehouse, String path, ProductInfo... args);
 
-    void sortByPrice(String path); // сортуємо продукти по ціні
-
-
-
+    void sortByPrice(String path);
+    
 }

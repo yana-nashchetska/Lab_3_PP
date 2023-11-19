@@ -9,17 +9,8 @@ public class Storehouse {
 
     private ArrayList<Customer> allCustomers = new ArrayList<>();
 
-    public Storehouse(ArrayList<ProductInfo> allProducts, ArrayList<Customer> allCustomers) {
-        this.allProducts = allProducts;
-        this.allCustomers = allCustomers;
-    }
-
     public ArrayList<Customer> getAllCustomers() {
         return allCustomers;
-    }
-
-    public void setAllCustomers(ArrayList<Customer> allCustomers) {
-        this.allCustomers = allCustomers;
     }
 
     public void setAllProducts(ArrayList<ProductInfo> allProducts) {
@@ -32,12 +23,6 @@ public class Storehouse {
     public ArrayList<ProductInfo> getAllProducts() {
         return allProducts;
     }
-
-    public void setAllProducts(String name, double price, int quantity)
-    {
-            this.allProducts.add(new ProductInfo(new Product(name, price), quantity));
-    }
-
 
     @Override
     public String toString() {

@@ -1,13 +1,9 @@
 package Java_Lab_3;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
-import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.MonthDay;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StorehouseImpl implements StorehouseService {
@@ -24,7 +20,7 @@ public class StorehouseImpl implements StorehouseService {
         calcTotalSum(customer);
         recalculateQuantity(storehouse, customer, args);
         printCheck(customer);
-        setStatus(storehouse, customer, true);
+        setStatus(customer, true);
     }
 
     public void addItem(Storehouse storehouse, Customer customer, Product product, int quantity) {
@@ -54,19 +50,16 @@ public class StorehouseImpl implements StorehouseService {
 
     @Override
     public void calcTotalSum(Customer customer) {
-        // Отримати останній чек
+
         Check lastCheck = getLastCheck(customer);
 
         if (lastCheck != null) {
-            // Отримати список продуктів з останнього чеку
+
             ArrayList<ProductInfo> products = lastCheck.getBoughtProducts();
 
-            // Порахувати загальну суму
             double totalSum = products.stream()
                     .mapToDouble(productInfo -> productInfo.getProduct().getPrice() * productInfo.getQuantity())
                     .sum();
-
-            // Встановити загальну суму
             lastCheck.setTotalSum(totalSum);
         } else {
             System.out.println("No checks to calculate total sum.");
@@ -75,15 +68,12 @@ public class StorehouseImpl implements StorehouseService {
     }
 
     public void printCheck(Customer customer) {
-        // Отримати останній чек
         Check lastCheck = getLastCheck(customer);
 
         if (lastCheck != null) {
-            // Створити унікальне ім'я файлу для чеку
             String fileName = "check_" + customer.getFirstName() + "_" + customer.getLastName() + "_" + System.currentTimeMillis() + ".txt";
             Path checkPath = Paths.get("D:\\PP\\Labs\\Java_Lab_3\\Checks_java_3", fileName);
             try {
-                // Записати чек у файл
                 Files.write(checkPath, lastCheck.toString().getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -101,7 +91,7 @@ public class StorehouseImpl implements StorehouseService {
         }
 
         storehouse.getAllCustomers().forEach(customer -> {
-            System.out.println(customer);  // Виводимо інформацію про покупця
+            System.out.println(customer);
 
             if (customer.getMyChecks().isEmpty()) {
                 System.out.println("No checks to print for this customer." + customer.getFirstName() + " " + customer.getLastName());
@@ -110,7 +100,7 @@ public class StorehouseImpl implements StorehouseService {
     }
 
 
-    public void setStatus(Storehouse storehouse, Customer customer, boolean status) {
+    public void setStatus( Customer customer, boolean status) {
         customer.getMyChecks().stream()
                 .filter(check -> check.equals(getLastCheck(customer)))
                 .forEach(check -> check.setPaid(status));
@@ -132,8 +122,6 @@ public class StorehouseImpl implements StorehouseService {
                 productInfoInStorehouse.setQuantity(newQuantity);
             });
         });
-
-        // System.out.println("Updated storehouse: " + storehouse.getAllProducts());
     }
 
 
@@ -144,7 +132,7 @@ public class StorehouseImpl implements StorehouseService {
 
     @Override
     public void editStorehouse(Storehouse storehouse, Product product, int productPrice) {
-        storehouse.getAllProducts().stream()
+        storehouse.getAllProducts()
                 .forEach(prInfStr -> {
                     if (prInfStr.getProduct().getName().equals(product.getName())) {
                         prInfStr.getProduct().setPrice(productPrice);
@@ -154,21 +142,20 @@ public class StorehouseImpl implements StorehouseService {
 
     @Override
     public double calcAveragePrice(Storehouse storehouse) {
-        double averagePrice = storehouse.getAllProducts().stream()
+        return storehouse.getAllProducts().stream()
                 .mapToDouble(productInfo -> productInfo.getProduct().getPrice())
                 .average()
                 .orElse(0);
-        return averagePrice;
+
     }
 
     @Override
     public double calcSpentMoney(LocalDate from, LocalDate to, Customer customer) {
-        double spentMoney = customer.getMyChecks().stream()
+        return customer.getMyChecks().stream()
                 .filter(check -> check.getDate().isAfter(from) || check.getDate().equals(from) &&
                         check.getDate().isBefore(to) || check.getDate().equals(to))
-                .mapToDouble((check -> check.getTotalSum()))
+                .mapToDouble((Check::getTotalSum))
                 .sum();
-        return spentMoney;
     }
 
 

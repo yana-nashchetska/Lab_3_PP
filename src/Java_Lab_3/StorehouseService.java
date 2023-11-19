@@ -21,14 +21,13 @@ public interface StorehouseService {
 
     double calcAveragePrice(Storehouse storehouse);
 
-    double calcSpentMoney(LocalDate from, LocalDate to, Customer customer); // скільки грошей витратив певний користувач за певний період часу.
+    double calcSpentMoney(LocalDate from, LocalDate to, Customer customer);
 
     void buy(Storehouse storehouse, Customer customer, LocalDate of, ProductInfo... args);
 
     void findTheLargestIncomeOfTheDay(Storehouse storehouse, Customer customer, LocalDate of) throws CustomException;
 
-
-    ProductInfo findTheMostPopularProduct(Storehouse storehouse); // знаходимо найпопулярніший продукт
+    ProductInfo findTheMostPopularProduct(Storehouse storehouse);
 
     Map<Product, Integer> getTotalQuantityOfEachProduct(Customer customer);
 
