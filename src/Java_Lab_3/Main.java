@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CustomException {
 
         String warehousePath = "D:\\PP\\Labs\\Java_Lab_3\\warehouse.txt";
         String checksPath = "D:\\PP\\Labs\\Java_Lab_3\\Checks_java_3";
@@ -106,6 +106,12 @@ public class Main {
                 new ProductInfo(new Product("meat", storehouse), 890));
         System.out.println("Statisctics about Ivan: ");
         System.out.println(storehouseService.getTotalQuantityOfEachProduct(ivanPetrenko));
+
+        System.out.println("=======================");
+        System.out.println("Attempt to edit payed check: ");
+
+        storehouseService.addItem(storehouse, ivanPetrenko, (new Product("milk", storehouse)), 200);
+        storehouseService.printAllChecks(storehouse);
 
     }
 }

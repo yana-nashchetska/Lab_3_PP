@@ -28,6 +28,8 @@ public class Customer {
         return myChecks;
     }
 
+
+
     @Override
     public String toString() {
         StringBuilder checksString = new StringBuilder();

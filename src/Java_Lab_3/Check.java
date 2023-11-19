@@ -17,11 +17,13 @@ public class Check {
     private ArrayList<String> comments;
     private ArrayList<String> bags = new ArrayList<>();
     private double totalSum;
+    private boolean isPaid = false;
 
     public Check(LocalDate date,
                  String storageName,
                  String customerName,
                  String customerSurname,
+                 boolean isPaid,
                  ProductInfo... args) {
         this.date = date;
         this.storageName = storageName;
@@ -30,6 +32,10 @@ public class Check {
         this.boughtProducts = new ArrayList<>(Arrays.asList(args));
         this.comments = new ArrayList<>();
         this.bags = new ArrayList<>();
+    }
+
+    public Check() {
+
     }
 
     public LocalDate getDate() {
@@ -96,5 +102,13 @@ public class Check {
 
     public double getTotalSum() {
         return totalSum;
+    }
+
+    public boolean isPaid() {
+        return isPaid;
+    }
+
+    public void setPaid(boolean paid) {
+        isPaid = paid;
     }
 }

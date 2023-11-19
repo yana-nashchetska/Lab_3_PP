@@ -10,6 +10,10 @@ public class ProductInfo {
         this.quantity = quantity;
     }
 
+    public ProductInfo() {
+
+    }
+
     public Product getProduct() {
         return product;
     }

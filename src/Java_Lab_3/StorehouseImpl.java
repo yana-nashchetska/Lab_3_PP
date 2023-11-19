@@ -18,13 +18,39 @@ public class StorehouseImpl implements StorehouseService {
     public void buy(Storehouse storehouse, Customer customer, LocalDate date, ProductInfo... args) {
         customer.addCheck(new Check(date,
                 storehouse.getName(),
-                customer.getFirstName(), customer.getLastName(),
+                customer.getFirstName(), customer.getLastName(), true,
                 args));
 
         calcTotalSum(customer);
         recalculateQuantity(storehouse, customer, args);
         printCheck(customer);
+        setStatus(storehouse, customer, true);
     }
+
+    public void addItem(Storehouse storehouse, Customer customer, Product product, int quantity) {
+        storehouse.getAllCustomers().stream()
+                .filter(c -> c.equals(customer))
+                .findFirst()
+                .ifPresent(c -> {
+                    ArrayList<Check> checks = c.getMyChecks();
+                    if (!checks.isEmpty()) {
+                        Check lastCheck = checks.get(checks.size() - 1);
+                        try {
+                            if (!lastCheck.isPaid()) {
+                                ProductInfo productInfo = new ProductInfo();
+                                productInfo.setProduct(product);
+                                productInfo.setQuantity(quantity);
+                                lastCheck.getBoughtProducts().add(productInfo);
+                            } else {
+                                throw new IllegalStateException("Cannot add items to a paid check");
+                            }
+                        } catch (IllegalStateException e) {
+                            System.out.println(e.getMessage());
+                        }
+                    }
+                });
+    }
+
 
     @Override
     public void calcTotalSum(Customer customer) {
@@ -59,15 +85,6 @@ public class StorehouseImpl implements StorehouseService {
             try {
                 // Записати чек у файл
                 Files.write(checkPath, lastCheck.toString().getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE);
-
-                // Зробити файл тільки для читання
-               /* File file = checkPath.toFile();
-                boolean isReadOnly = file.setReadOnly();
-                if (isReadOnly) {
-                    System.out.println("Check printed successfully and is now read-only!");
-                } else {
-                    System.out.println("Check printed successfully, but failed to make the file read-only.");
-                }*/
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -87,11 +104,17 @@ public class StorehouseImpl implements StorehouseService {
             System.out.println(customer);  // Виводимо інформацію про покупця
 
             if (customer.getMyChecks().isEmpty()) {
-                System.out.println("No checks to print for this customer.");
+                System.out.println("No checks to print for this customer." + customer.getFirstName() + " " + customer.getLastName());
             }
         });
     }
 
+
+    public void setStatus(Storehouse storehouse, Customer customer, boolean status) {
+        customer.getMyChecks().stream()
+                .filter(check -> check.equals(getLastCheck(customer)))
+                .forEach(check -> check.setPaid(status));
+    }
 
     @Override
     public void recalculateQuantity(Storehouse storehouse, Customer customer, ProductInfo... args) {
@@ -176,7 +199,6 @@ public class StorehouseImpl implements StorehouseService {
                 .flatMap(check -> check.getBoughtProducts().stream())
                 .collect(Collectors.groupingBy(ProductInfo::getProduct, Collectors.summingInt(ProductInfo::getQuantity)));
     }
-
 }
 
 

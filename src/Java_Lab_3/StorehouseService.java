@@ -32,5 +32,5 @@ public interface StorehouseService {
 
     Map<Product, Integer> getTotalQuantityOfEachProduct(Customer customer);
 
-}// знайти найприбутковіший чек за певний день.
+}
 

@@ -4,64 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23781fdb-c228-4d6d-a6f5-303ad79a1746" name="Changes" comment="added product order, receivment and maybe lock">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="23781fdb-c228-4d6d-a6f5-303ad79a1746" name="Changes" comment="almost done. payed check can be edited">
+      <change afterPath="$PROJECT_DIR$/src/Java_Lab_3/CheckPaidException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700389043970.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700389044001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700390014883.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700390014911.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700390186234.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700390186249.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700390296263.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700390296287.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700390958153.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700390958168.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700391704993.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700391705009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700392006911.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700392006927.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700394469080.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700394469096.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700394923789.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700394923805.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700395044687.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700395054354.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700395207179.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700395207192.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700395209608.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700395209625.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700395351406.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700395351431.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700395991653.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700395991669.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700396071261.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700396071276.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700396124773.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700396124805.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700396224024.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700396224040.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700397479863.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700397479878.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700397574043.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700397574059.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700397714784.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700397714800.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700397768792.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Ivan_Petrenko_1700397768793.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Petro_Ivanenko_1700397479910.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Petro_Ivanenko_1700397574074.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Petro_Ivanenko_1700397714815.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checks_java_3/check_Petro_Ivanenko_1700397768809.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/FileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Storehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Storehouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/ProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/ProductInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse.txt" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +143,7 @@
       <workItem from="1700332504274" duration="9767000" />
       <workItem from="1700386339011" duration="15087000" />
       <workItem from="1700404210078" duration="10752000" />
-      <workItem from="1700422874316" duration="2603000" />
+      <workItem from="1700422874316" duration="8086000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -258,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700404171902</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="almost done. payed check can be edited">
+      <option name="closed" value="true" />
+      <created>1700425965477</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700425965477</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +232,8 @@
     <MESSAGE value="we can buy, print all checks, generate them in txt while buying, add customer to the store, add comments to the checks, calculate total. Plus, personal exception added." />
     <MESSAGE value="added product edition" />
     <MESSAGE value="added product order, receivment and maybe lock" />
-    <option name="LAST_COMMIT_MESSAGE" value="added product order, receivment and maybe lock" />
+    <MESSAGE value="almost done. payed check can be edited" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost done. payed check can be edited" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -282,7 +242,7 @@
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/Java_Lab_3/Check.java" line="29">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/Java_Lab_3/Check.java" line="31">
         <watch expression="((Check)this).boughtProducts" language="JAVA" custom="Java_Lab_3.Check" />
       </inline-watch>
     </watches-manager>
