@@ -3,11 +3,11 @@ package Java_Lab_3;
 import java.util.ArrayList;
 
 public class Customer {
-    private String firstName;
-    private String lastName;
-    private ArrayList<Check> myChecks = new ArrayList<>();
+    private final String firstName;
+    private final String lastName;
+    private final ArrayList<Check> myChecks = new ArrayList<>();
 
-    public Customer(String firstName, String lastName) {
+    public Customer(final String firstName, final String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
