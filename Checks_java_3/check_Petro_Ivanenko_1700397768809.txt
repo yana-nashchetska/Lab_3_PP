@@ -1,0 +1,12 @@
+   -----  THIS IS CHECK:  -----  
+=============================
+date: 2023-11-19T14:36
+ You,Petro Ivanenko	
+bought products in  StoreHOUSE 	
+Products: 
+[bread---- 15.0 UAH 10 pcs
+, fish---- 97.75 UAH 100 pcs
+, milk---- 2.2 UAH 50 pcs
+]	
+Comment: Don't forget to store fish in the fridge.
+=============================TOTAL SUM: 10035.0=============================

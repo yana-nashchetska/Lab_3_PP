@@ -1,0 +1,12 @@
+   -----  THIS IS CHECK:  -----  
+=============================
+date: 2023-11-19T14:36
+ You,Petro Ivanenko	
+bought products in  StoreHOUSE 	
+Products: 
+[bread 10 pcs
+, fish 100 pcs
+, milk 50 pcs
+]	
+Comment: Don't forget to store fish in the fridge.
+=============================TOTAL SUM: 10035.0=============================

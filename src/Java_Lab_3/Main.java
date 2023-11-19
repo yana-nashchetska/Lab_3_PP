@@ -51,6 +51,12 @@ public class Main {
             System.err.println("CustomException caught: " + e.getMessage());
             e.printStackTrace(); // друкуємо стек викликів, це допоможе нам знайти помилку
         }
+
+        storehouseService.editStorehouse(storehouse, new Product("bread", storehouse), 15); // новий прайс бреда
+        storehouseService.buy(storehouse, petroIvanenko, LocalDateTime.of(2023,11,19,14,36),
+                new ProductInfo(new Product("bread", storehouse), 10),
+                new ProductInfo(new Product("fish", storehouse), 100),
+                new ProductInfo(new Product("milk", storehouse), 50));
     }
 }
 

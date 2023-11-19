@@ -6,7 +6,7 @@ import java.util.HashMap;
 public interface StorehouseService {
 
     void calcTotalSum(Customer customer); // рахуємо загальну суму чеку
-    void editStorehouse(Storehouse storehouse, ProductInfo productInfo, int productPrice); // в магазині будемо редагувати ціну
+    void editStorehouse(Storehouse storehouse, Product product, int productPrice); // в магазині будемо редагувати ціну
     // продукту. Не редагуємо на складі, бо магазин може виставляти свою ціну окремо від складу, та робити націнку.
 
     void addCustomer(Storehouse storehouse, Customer customer);

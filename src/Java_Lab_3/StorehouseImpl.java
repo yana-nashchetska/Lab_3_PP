@@ -116,8 +116,13 @@ public class StorehouseImpl implements StorehouseService {
     }
 
     @Override
-    public void editStorehouse(Storehouse storehouse, ProductInfo productInfo, int productPrice) {
-
+    public void editStorehouse(Storehouse storehouse, Product product, int productPrice) {
+        storehouse.getAllProducts().stream()
+                .forEach(prInfStr -> {
+            if (prInfStr.getProduct().getName().equals(product.getName())) {
+                prInfStr.getProduct().setPrice(productPrice);
+            }
+        });
     }
 
     @Override

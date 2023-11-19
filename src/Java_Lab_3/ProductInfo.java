@@ -30,6 +30,6 @@ public class ProductInfo {
 
     @Override
     public String toString() {
-        return product + " " + quantity + " pcs";
+        return product + " " + quantity + " pcs\n";
     }
 }

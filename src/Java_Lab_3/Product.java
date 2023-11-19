@@ -46,7 +46,7 @@ public class Product
 
     @Override
     public String toString() {
-        return String.format("%-15s - %-5s UAH", name, price);
+        return name + "---- " + price + " UAH";
     }
 
 }
