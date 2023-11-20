@@ -7,9 +7,6 @@
     <list default="true" id="23781fdb-c228-4d6d-a6f5-303ad79a1746" name="Changes" comment="finished. added final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Java_Lab_3/StorehouseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse.txt" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +65,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -141,6 +139,7 @@
       <workItem from="1700386339011" duration="15087000" />
       <workItem from="1700404210078" duration="10752000" />
       <workItem from="1700422874316" duration="11687000" />
+      <workItem from="1700471905445" duration="679000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -238,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700434661806</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="finished. added final">
+      <option name="closed" value="true" />
+      <created>1700471929975</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700471929975</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

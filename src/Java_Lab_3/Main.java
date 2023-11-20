@@ -53,7 +53,7 @@ public class Main {
         storehouseService.buy(storehouse, ivanPetrenko, LocalDate.of(2023, 11, 20), new ProductInfo(new Product("bread", storehouse), 1));
 
         fileServiceImpl.orderProducts(storehouse, warehousePath, new ProductInfo(new Product("bread", storehouse), 90_000));
-        fileServiceImpl.receiveAllProducts(storehouse, warehousePath);
+        fileServiceImpl.receiveProducts(storehouse, warehousePath);
 
         fileServiceImpl.printAllProducts(storehouse);// для перевірки
         System.out.println("=========================");
@@ -112,6 +112,7 @@ public class Main {
 
         storehouseService.addItem(storehouse, ivanPetrenko, (new Product("milk", storehouse)), 200);
         storehouseService.printAllChecks(storehouse);
+
 
     }
 }
