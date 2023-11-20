@@ -1,0 +1,10 @@
+   -----  THIS IS CHECK:  -----  
+=============================
+date: 2023-11-21
+ You,Ivan Petrenko	
+bought products in  StoreHOUSE 	
+Products: 
+[meat	---- 100.0 UAH   	890 pcs	
+]	
+Comment: Don't forget to store meat in the fridge.
+=============================TOTAL SUM: 89000.0=============================
