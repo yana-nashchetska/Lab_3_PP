@@ -169,6 +169,7 @@ public class StorehouseImpl implements StorehouseService {
     }
 
 
+    @Override
     public ProductInfo findTheMostPopularProduct(Storehouse storehouse) {
         return storehouse.getAllCustomers().stream()
                 .flatMap(customer -> customer.getMyChecks().stream())

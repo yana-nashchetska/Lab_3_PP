@@ -31,5 +31,6 @@ public interface StorehouseService {
 
     Map<Product, Integer> getTotalQuantityOfEachProduct(Customer customer);
 
+
 }
 
